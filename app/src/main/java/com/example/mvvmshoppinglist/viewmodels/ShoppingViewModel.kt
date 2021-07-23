@@ -14,9 +14,9 @@ class ShoppingViewModel(
         repositories.upsert(item)
     }
 
-//    fun delete(item: ShoppingItem) = CoroutineScope(Dispatchers.Main).launch {
-//        repositories.delete(item)
-//    }
+    fun delete(item: ShoppingItem) = CoroutineScope(Dispatchers.Main).launch {
+        repositories.delete(item)
+    }
 
     fun getAllShoppingItems()=repositories.getAllShoppingItems()
 }
