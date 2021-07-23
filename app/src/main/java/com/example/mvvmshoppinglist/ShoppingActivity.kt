@@ -16,11 +16,16 @@ import com.example.mvvmshoppinglist.interfaces.AddDialogInterface
 import com.example.mvvmshoppinglist.viewmodels.ShoppingViewModel
 import com.example.mvvmshoppinglist.viewmodels.ShoppingViewModelFactory
 import kotlinx.android.synthetic.main.activity_shopping.*
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.generic.instance
 
 class ShoppingActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping)
+
         val database = ShoppingDatabase(this)
         val repository = ShoppingRepositories(database)
         val factory = ShoppingViewModelFactory(repository)
@@ -43,4 +48,6 @@ class ShoppingActivity : AppCompatActivity() {
             }).show()
         }
     }
+
+
 }
